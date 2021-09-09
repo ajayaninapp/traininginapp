@@ -53,9 +53,7 @@ while i<10:
     userchoice[i+1]=choice
     i=i+1
     pcchoice[i]=random.choice(choices)
-    print(type(choice))
-    print(type(pcchoice[i]))
-
+    
     if(choice==rock_choice):
        
         if(choice==pcchoice[i]):
