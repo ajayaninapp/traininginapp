@@ -160,10 +160,9 @@ while True:
 
     if not replay():
         break
-print (user_input)
-print (round_history)
+
 round_no=int(input("enter round:\n"))
-print(type(user_input[round_no-1]))
+
 if user_input[round_no-1]=='':
     print ("no round")
 if user_input[round_no-1]=='X':
