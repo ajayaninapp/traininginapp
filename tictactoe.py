@@ -183,6 +183,24 @@ if user_input[round_no-1]=='X':
                  history_board[round_history[round_no-1][item]]='x'
                  display_board(history_board)
                  x=0
+elif user_input[round_no-1]=='O':
+    print ("hi")
+    print(round_history[round_no-1])
+    for item in range(0,len(round_history[round_no-1])):
+        if round_history[round_no-1][item]==0:
+            break
+        else:
+            if x==0:
+                 history_board[round_history[round_no-1][item]]='x'
+                 display_board(history_board)
+                 x=1
+           
+            
+            
+            elif x==1:
+                 history_board[round_history[round_no-1][item]]='0'
+                 display_board(history_board)
+                 x=0
             
              
             
