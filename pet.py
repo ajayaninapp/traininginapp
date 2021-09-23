@@ -56,14 +56,15 @@ class Pet:
 def petselector(x):
     petname=''
     if x==2:
-        petname='Jimmy'
-        return petname
+        jimmy=Pet("jimmy",["hi","hello"])
+        return jimmy
     elif x==1:
-        petname='Tommy'
-        return petname
+        tommy=Pet("tommy",["wow","bow"])
+        return tommy
     elif x==3:
         petname=input("Enter new petname\n")
-        return petname
+        new_adopt=Pet(petname)
+        return  new_adopt
     else:
         print("invalid input")
 
@@ -72,9 +73,8 @@ def petselector(x):
 
 x=int(input("select your pet :\n 1--Tommy\n2--Jimmy\n3--New adoption\n"))
 
-name=petselector(x)
 
-mypet=Pet(name)
+mypet=petselector(x)
 
 print(mypet.hunger)
 
