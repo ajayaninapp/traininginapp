@@ -53,6 +53,7 @@ class Pet:
 
 jimmy=Pet("jimmy",["hi","hello"])
 tommy=Pet("tommy",["wow","bow"])
+all=[tommy,jimmy]
 
 def petselector(x):
     petname=''
@@ -63,9 +64,11 @@ def petselector(x):
     elif x==3:
         petname=input("Enter new petname\n")
         new_adopt=Pet(petname)
+        all.append(new_adopt)
         return  new_adopt
     else:
         print("invalid input")
+    
 
         
         
@@ -75,16 +78,16 @@ x=int(input("select your pet :\n 1--Tommy\n2--Jimmy\n3--New adoption\n"))
 
 mypet=petselector(x)
 
-print(mypet.hunger)
+
 
 print(f'pet name:{mypet.name}\nhunger:{mypet.hunger}\nboredom:{mypet.boredom}\nwords:{mypet.sounds}')
-
+print(tommy.boredom)
 something = False
 while not something:
    
 
     a=int(input("commands available\n1---feed\n2---teach\n3---greet"))
-    mypet.clock_tick()
+    map(lambda y: y.clock_tick(),all) 
 
     if a==1:
         mypet.feed()  
@@ -106,5 +109,8 @@ while not something:
 print(f'pet name:{mypet.name}\nhunger:{mypet.hunger}\nboredom:{mypet.boredom}\nwords:{mypet.sounds}')
 
 print(mypet)
+
+
+
 
    
