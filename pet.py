@@ -78,17 +78,22 @@ x=int(input("select your pet :\n 1--Tommy\n2--Jimmy\n3--New adoption\n"))
 
 mypet=petselector(x)
 
+def start_all(all):
+    for item in all:
+        item.clock_tick()
 
 
-print(f'pet name:{mypet.name}\nhunger:{mypet.hunger}\nboredom:{mypet.boredom}\nwords:{mypet.sounds}')
-print(tommy.boredom)
+for item in all:
+    print(f'pet name:{item.name}\nhunger:{item.hunger}\nboredom:{item.boredom}\nwords:{item.sounds}')
+
+
 something = False
 while not something:
    
 
     a=int(input("commands available\n1---feed\n2---teach\n3---greet"))
-    map(lambda y: y.clock_tick(),all) 
-
+    
+    start_all(all)
     if a==1:
         mypet.feed()  
 
@@ -106,10 +111,8 @@ while not something:
     if inout != 'y':
         something = True
 
-print(f'pet name:{mypet.name}\nhunger:{mypet.hunger}\nboredom:{mypet.boredom}\nwords:{mypet.sounds}')
-
-print(mypet)
-
+for item in all:
+    print(f'pet name:{item.name}\nhunger:{item.hunger}\nboredom:{item.boredom}\nwords:{item.sounds}')
 
 
 
