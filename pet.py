@@ -51,15 +51,14 @@ class Pet:
     def feed(self):
         self.reduce_hunger()
 
-
+jimmy=Pet("jimmy",["hi","hello"])
+tommy=Pet("tommy",["wow","bow"])
 
 def petselector(x):
     petname=''
-    if x==2:
-        jimmy=Pet("jimmy",["hi","hello"])
+    if x==2:        
         return jimmy
     elif x==1:
-        tommy=Pet("tommy",["wow","bow"])
         return tommy
     elif x==3:
         petname=input("Enter new petname\n")
@@ -86,14 +85,17 @@ while not something:
 
     a=int(input("commands available\n1---feed\n2---teach\n3---greet"))
     mypet.clock_tick()
+
     if a==1:
         mypet.feed()  
 
     elif a==2:
         word=input("enter word to teach:")
         mypet.teach(word)
+
     elif a==3:
         mypet.hi()
+
     else:
         print('invalid input')
 
