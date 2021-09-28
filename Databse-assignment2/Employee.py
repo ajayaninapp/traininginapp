@@ -43,7 +43,7 @@ c = conn.cursor()
 
 def get_employee(Emp_id):
     with conn:
-         select_query = """select Emp_Id,Emp_Name,Dept_Id,Salary from Employee where Emp_Id = ?"""
+         select_query = """select * from Employee where Emp_Id = ?"""
          c.execute(select_query,(Emp_id,))
          records=c.fetchall()
          print("Printing Employee details:")
@@ -52,6 +52,7 @@ def get_employee(Emp_id):
              print("Employee Name--->",row[1])
              print("Dept Id--->",row[2])
              print("salary--->",row[3])
+             print("city--->",row[4])
 
 def get_allemployee():
     with conn:
